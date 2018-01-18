@@ -93,10 +93,10 @@ rollDice.addEventListener('click', function() {
 
   if (activeGame === true) {
 
-    // dice = Math.floor(Math.random() * 6 + 1);
-    // dice2 = Math.floor(Math.random() * 6 + 1);
-   var dice = Math.floor(Math.random() * (6 - 5 + 1)) + 5;
-   var dice2 = Math.floor(Math.random() * (6 - 5 + 1)) + 5;
+    dice = Math.floor(Math.random() * 6 + 1);
+    dice2 = Math.floor(Math.random() * 6 + 1);
+   // var dice = Math.floor(Math.random() * (6 - 5 + 1)) + 5;
+   // var dice2 = Math.floor(Math.random() * (6 - 5 + 1)) + 5;
    console.log('Primo dado ' + dice);
    console.log('Secondo dado ' + dice2);
 
