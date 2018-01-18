@@ -75,6 +75,17 @@ function nextPlayer() {
 
 }
 
+// Function to display dice
+
+function displayDice() {
+  document.querySelector('.dice').src = 'dice-' + dice + '.png';
+  document.querySelector('.dice2').src = 'dice-' + dice2 + '.png';
+  document.querySelector('.dice').style.display = 'block';
+  document.querySelector('.dice2').style.display = 'block';
+
+
+}
+
 
 // Call function to start the game
 
@@ -109,13 +120,10 @@ rollDice.addEventListener('click', function() {
     if (diceTemp.length === 2) {
       console.log('Uscita ' + diceTemp);
       $('.message6').fadeIn(400, function(){
-      $('.message6').fadeOut(800);
-    });
+        $('.message6').fadeOut(800);
+      });
 
-      document.querySelector('.dice').src = 'dice-' + dice + '.png';
-      document.querySelector('.dice2').src = 'dice-' + dice2 + '.png';
-      document.querySelector('.dice').style.display = 'block';
-      document.querySelector('.dice2').style.display = 'block';
+      displayDice();
       document.querySelector('#current-' + activePlayer).textContent = '0';
       playerScore[activePlayer] = 0;
       document.querySelector('#score-' + activePlayer).textContent = '0';
@@ -125,10 +133,7 @@ rollDice.addEventListener('click', function() {
     else {
       // diceTemp.pop();
       document.querySelector('#current-' + activePlayer).textContent = 0;
-      document.querySelector('.dice').src = 'dice-' + dice + '.png';
-      document.querySelector('.dice2').src = 'dice-' + dice2 + '.png';
-      document.querySelector('.dice').style.display = 'block';
-      document.querySelector('.dice2').style.display = 'block';
+      displayDice();
       roundScore += dice + dice2;
       document.querySelector('#current-' + activePlayer).textContent = roundScore;
     }
@@ -138,10 +143,7 @@ rollDice.addEventListener('click', function() {
 
     diceTemp.pop();
     document.querySelector('#current-' + activePlayer).textContent = 0;
-    document.querySelector('.dice').src = 'dice-' + dice + '.png';
-    document.querySelector('.dice2').src = 'dice-' + dice2 + '.png';
-    document.querySelector('.dice').style.display = 'block';
-    document.querySelector('.dice2').style.display = 'block';
+    displayDice();
     roundScore += dice + dice2;
     document.querySelector('#current-' + activePlayer).textContent = roundScore;
   }
@@ -160,10 +162,7 @@ rollDice.addEventListener('click', function() {
     });
 
 
-    document.querySelector('.dice').src = 'dice-' + dice + '.png';
-    document.querySelector('.dice2').src = 'dice-' + dice2 + '.png';
-    document.querySelector('.dice').style.display = 'block';
-    document.querySelector('.dice2').style.display = 'block';
+    displayDice();
     document.querySelector('#current-' + activePlayer).textContent = '0';
     nextPlayer();
   }
