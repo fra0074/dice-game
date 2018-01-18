@@ -190,6 +190,7 @@ hold.addEventListener('click', function() {
     document.getElementById('name-' + activePlayer).textContent = "Winner";
     document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
     document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.dice2').style.display = 'none';
     activeGame = false;
 
 
@@ -202,9 +203,17 @@ hold.addEventListener('click', function() {
 });
 
 
+// Start new game
 var newGame = document.querySelector('.btn-new');
 
-newGame.addEventListener('click', init );
+newGame.addEventListener('click', function() {
+  init();
+  location.reload();
+
+
+
+} );
+
 
 // document.addEventListener('keypress', function(e){
 //   console.log(e.key);
