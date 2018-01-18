@@ -20,7 +20,7 @@ scoreButton.addEventListener('click', function() {
 
   if (chosedScore === "")  {
 
-     alert("wrong");
+    alert("wrong");
   }
 
   else{
